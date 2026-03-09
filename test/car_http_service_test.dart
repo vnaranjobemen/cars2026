@@ -81,5 +81,20 @@ void main() {
       },
       timeout: const Timeout(Duration(seconds: 30)),
     );
+
+    test(
+      // Verifica que getCarsPage aplica paginación con page y limit.
+      'getCarsPage returns list up to requested limit for given page',
+      () async {
+        const page = 1;
+        const limit = 5;
+
+        final cars = await service.getCarsPage(page, limit);
+
+        expect(cars, isNotEmpty);
+        expect(cars.length, lessThanOrEqualTo(limit));
+      },
+      timeout: const Timeout(Duration(seconds: 30)),
+    );
   });
 }

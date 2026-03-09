@@ -32,4 +32,17 @@ class CarHttpService {
       throw Exception('Failed to load cars');
     }
   }
+
+  Future<List<CarModel>> getCarsPage(int page, int limit) async {
+    final response = await http.get(
+      Uri.parse('$serverUrl?page=$page&limit=$limit'),
+      headers: {'X-RapidAPI-Key': _headerKey, 'X-RapidAPI-Host': _headerHost},
+    );
+
+    if (response.statusCode == 200) {
+      return carsModelFromJson(response.body);
+    } else {
+      throw Exception('Failed to load cars');
+    }
+  }
 }
