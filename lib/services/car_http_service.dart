@@ -1,4 +1,4 @@
-import 'package:cars2026/class_model.dart';
+import 'package:cars2026/model/car_model.dart';
 import 'package:http/http.dart' as http;
 
 class CarHttpService {

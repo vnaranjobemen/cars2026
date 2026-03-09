@@ -1,4 +1,4 @@
-import 'package:cars2026/class_model.dart';
+import 'package:cars2026/model/car_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
