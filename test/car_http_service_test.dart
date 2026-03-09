@@ -68,5 +68,18 @@ void main() {
       },
       timeout: const Timeout(Duration(seconds: 45)),
     );
+
+    test(
+      // Verifica que getCarsLimitted devuelve como máximo el límite solicitado.
+      'getCarsLimitted returns list up to requested limit',
+      () async {
+        const limit = 3;
+        final cars = await service.getCarsLimitted(limit: limit);
+
+        expect(cars, isNotEmpty);
+        expect(cars.length, lessThanOrEqualTo(limit));
+      },
+      timeout: const Timeout(Duration(seconds: 30)),
+    );
   });
 }
