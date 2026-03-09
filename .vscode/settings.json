@@ -1,4 +1,7 @@
 {
+    "files.exclude": {
+        "**/.*": true
+    },
     "workbench.colorCustomizations": {
         "activityBar.background": "#4D4D0F",
         "titleBar.activeBackground": "#B9B924",
