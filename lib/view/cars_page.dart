@@ -1,6 +1,6 @@
 import 'package:cars2026/services/car_http_service.dart';
 import 'package:flutter/material.dart';
-import 'package:cars2026/view/cars_list.dart';
+import 'package:cars2026/view/cars_list1.dart';
 
 class CarsPage extends StatefulWidget {
   const CarsPage({super.key, required this.carHttpService});
@@ -19,7 +19,7 @@ class _CarsPageState extends State<CarsPage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Cars'),
       ),
-      body: InfiniteCarsList(carHttpService: widget.carHttpService),
+      body: CarsList1(carHttpService: widget.carHttpService),
     );
   }
 }

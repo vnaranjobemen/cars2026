@@ -1,6 +1,17 @@
 import 'package:cars2026/model/car_model.dart';
 import 'package:http/http.dart' as http;
 
+/*
+ * Service o Datasource per a obtenir els cotxes des del servidor. 
+ * Utilitza l'API de RapidAPI per a fer les peticions HTTP i obtenir les dades dels cotxes. 
+ * Té tres mètodes: 
+ *  - getCars() per obtenir tots els cotxes
+ *  - getCarsLimitted() per obtenir un nombre limitat de cotxes
+ *  - getCarsPage() per obtenir una pàgina específica de cotxes amb un límit de pàgina. 
+ * Cada mètode retorna una llista de CarModel o llença una excepció si la petició falla.
+ * 
+ * Si haguessim de gestionar més d'un servei, tindriem  ua capa per sobre. Seria el Repository, que gestionaria les diferents fonts de dades (HTTP, local, etc) i faria la lògica * de negoci per decidir quina font utilitzar en cada moment.
+ */
 class CarHttpService {
   final String serverUrl = 'https://car-data.p.rapidapi.com/cars';
   final String _headerKey =
